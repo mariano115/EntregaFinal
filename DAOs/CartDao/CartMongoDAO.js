@@ -68,6 +68,19 @@ module.exports = class CartMongoDb {
     }
   }
 
+  async editCartById(id, cart) {
+    try {
+      return await cartModel.findByIdAndUpdate(
+        { _id: id },
+        { ...cart },
+        { returnOriginal: false }
+      );
+    } catch (error) {
+      logger.warn("error in modify cart method updatecartById");
+      return { error: "error in modify cart" };
+    }
+  }
+
   static returnSingleton() {
     if (!this.instance) {
       this.instance = new CartMongoDb();

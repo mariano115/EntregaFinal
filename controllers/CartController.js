@@ -34,6 +34,10 @@ const createEmptyCart = async (email, address) => {
   });
 };
 
+const editCartById = async (req, res) => {
+  res.send(await cartService.editCartById(req.params.id, req.body));
+};
+
 module.exports = {
   deleteCartById,
   getCartById,
@@ -41,4 +45,5 @@ module.exports = {
   createEmptyCart,
   generatePurchaseSummary,
   getCarts,
+  editCartById
 };

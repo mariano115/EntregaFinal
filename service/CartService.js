@@ -50,6 +50,10 @@ const createEmptyCart = async (email, address) => {
   return await connectionDbb.createEmptyCart(email, address);
 };
 
+const editCartById = async (id, cart) => {
+  return await connectionDbb.editCartById(id, cart);
+};
+
 module.exports = {
   getCartById,
   addProductToCart,
@@ -57,4 +61,5 @@ module.exports = {
   generatePurchaseSummary,
   getCarts,
   deleteCartById,
+  editCartById
 };

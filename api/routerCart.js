@@ -7,6 +7,6 @@ router.get("/", auth, validateAdmin, cartController.getCarts)
 router.get("/:id", auth, cartController.getCartById)
 router.post("/", auth, cartController.addProductToCart)
 router.delete("/:id", auth, validateAdmin, cartController.deleteCartById)
-//router.put("/:id", auth, validateAdmin, cartController.editProductById)
+router.put("/:id", auth, validateAdmin, cartController.editCartById)
 
 module.exports = router;
