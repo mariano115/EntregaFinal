@@ -5,5 +5,6 @@ const secretSession = process.env.SECRETSESSION
 const emailAdmin = process.env.EMAILADMIN
 const passwordAdmin = process.env.PASSWORDADMIN
 const publicAvatarsUrl = process.env.PUBLIC_URL_AVATARS
+const timeExpiration = process.env.TIMEEXPIRATION
 
-module.exports = { urlMongo, secretSession, emailAdmin, passwordAdmin, publicAvatarsUrl };
+module.exports = { urlMongo, secretSession, emailAdmin, passwordAdmin, publicAvatarsUrl, timeExpiration };

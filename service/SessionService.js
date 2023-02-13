@@ -2,7 +2,6 @@ const { createHash, getDataUser } = require("../tools/utils");
 const UserService = require("./UserService");
 const { getCartById, generatePurchaseSummary } = require("./CartService");
 const enviarMail = require("../tools/mails");
-const Config = require("../config");
 
 const register = async (newUser) => {
   try {
@@ -23,8 +22,9 @@ const finishBuy = async (carrito) => {
     const cart = await getCartById(carrito.idCarrito);
     const user = await getDataUser(cart.email);
     const emailText = await generatePurchaseSummary(cart);
+    console.log(cart.email);
     enviarMail(
-      Config.emailAdmin,
+      cart.email,
       "nuevo pedido de " + user.name + " " + user.email,
       emailText
     );

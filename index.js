@@ -45,7 +45,7 @@ app.use(
     secret: Config.secretSession,
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: parseInt(Config.timeExpiration) },
   })
 );
 
@@ -53,7 +53,7 @@ app.use(
 app.use("/session", routerSession)
 app.use("/productos", routerProduct)
 app.use("/carrito", routerCart)
-app.use("/mensajes", routerMessage)
+app.use("/chat", routerMessage)
 
 
 //Puerto enviado por ARGS
@@ -135,7 +135,7 @@ app.get(
   (req, res) => {
     logger.info("Peticion GET a ruta '/login'")
     req.session.email = req.body.email;
-    res.redirect("/home");
+    res.redirect("/productos");
   }
 );
 

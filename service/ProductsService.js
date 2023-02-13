@@ -19,6 +19,16 @@ const getProductById = async (id) => {
   return productDTO(await connectionDbb.getProductById(id));
 };
 
+const getProductsByCategory = async (category) => {
+  try {
+    const products = await connectionDbb.getProductsByCategory(category);
+    return products.map((product) => productDTO(product));
+  } catch (error) {
+    logger.warn("error in get product by category method getProductsByCategory");
+    return { error: "error in get products" };
+  } 
+}
+
 const addProduct = async (product) => {
   if (
     product.description !== undefined &&
@@ -55,4 +65,5 @@ module.exports = {
   getProductById,
   deleteProductById,
   updateProductById,
+  getProductsByCategory
 };

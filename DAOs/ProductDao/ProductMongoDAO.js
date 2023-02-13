@@ -18,6 +18,15 @@ module.exports = class ProductMongoDb {
     }
   }
 
+  async getProductsByCategory(category) {
+    try {
+      return await productModel.find({ category: category });
+    } catch (error) {
+      logger.warn("error in get product by category method getProductsByCategory");
+      return { error: "error in get product" };
+    }
+  }
+
   async addProduct(product) {
     try {
       return await productModel.create(product);

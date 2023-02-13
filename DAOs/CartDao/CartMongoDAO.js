@@ -1,4 +1,6 @@
 const cartModel = require("../../models/Cart.model");
+const { loggerDeclaration } = require("../../tools/utils");
+
 const logger = loggerDeclaration();
 
 module.exports = class CartMongoDb {

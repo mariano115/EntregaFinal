@@ -8,6 +8,10 @@ const getProductById = async (req, res) => {
   res.send(await ProductService.getProductById(req.params.id));
 };
 
+const getProductsByCategory = async (req, res) => {
+  res.send(await ProductService.getProductsByCategory(req.params.id))
+}
+
 const addProduct = async (req, res) => {
   res.send(await ProductService.addProduct(req.body));
 };
@@ -22,6 +26,7 @@ const updateProductById = async (req, res) => {
 
 module.exports = {
   getProducts,
+  getProductsByCategory,
   addProduct,
   getProductById,
   deleteProductById,

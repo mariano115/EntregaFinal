@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 
  const enviarMail = (destinatario, asunto, mensaje) => {
 	const mailOptions = {
-		from: "Servidor Node.js",
+		from: Config.emailAdmin,
 		to: destinatario,
 		subject: asunto,
 		html: mensaje,
