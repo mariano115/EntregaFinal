@@ -13,7 +13,7 @@ const getCartById = async (id) => {
   return cartDTO(await connectionDbb.getCartById(id));
 };
 
-const generatePurchaseSummary = async (cart) => {
+/* const generatePurchaseSummary = async (cart) => {
   try {
     const itemsList = cart.items
       .map((item) => {
@@ -30,7 +30,7 @@ const generatePurchaseSummary = async (cart) => {
     logger.warn("No se pudo crear el resumen de productos");
     return error;
   }
-};
+}; */
 
 const addProductToCart = async (idProduct, idCart, cantidad) => {
   try {
@@ -58,7 +58,7 @@ module.exports = {
   getCartById,
   addProductToCart,
   createEmptyCart,
-  generatePurchaseSummary,
+  /* generatePurchaseSummary, */
   getCarts,
   deleteCartById,
   editCartById

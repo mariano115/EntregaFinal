@@ -1,7 +1,8 @@
 const { createHash, getDataUser } = require("../tools/utils");
 const UserService = require("./UserService");
-const { getCartById, generatePurchaseSummary } = require("./CartService");
+const { getCartById } = require("./CartService");
 const enviarMail = require("../tools/mails");
+const { generateOrder } = require("./OrderService");
 
 const register = async (newUser) => {
   try {
@@ -21,14 +22,14 @@ const finishBuy = async (carrito) => {
   try {
     const cart = await getCartById(carrito.idCarrito);
     const user = await getDataUser(cart.email);
-    const emailText = await generatePurchaseSummary(cart);
-    console.log(cart.email);
-    enviarMail(
+    /* const emailText = await generateOrder(cart); */
+    const order = await generateOrder(cart, user);
+    /* enviarMail(
       cart.email,
       "nuevo pedido de " + user.name + " " + user.email,
       emailText
     );
-    return "El pedido fue confirmado";
+    return "El pedido fue confirmado"; */
   } catch (error) {
     return error;
   }

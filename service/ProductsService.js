@@ -10,13 +10,18 @@ const getProducts = async () => {
     const products = await connectionDbb.find();
     return products.map((product) => productDTO(product));
   } catch (error) {
-    logger.warn("error in get product method getProductById");
+    logger.warn("error in get product method getProducts");
     return { error: "error in get products" };
   }
 };
 
 const getProductById = async (id) => {
-  return productDTO(await connectionDbb.getProductById(id));
+  try {
+    return productDTO(await connectionDbb.getProductById(id));
+  } catch (error) {
+    logger.warn("error in get product by id method getProductById", error);
+    return { error: "error in get a product" };
+  }
 };
 
 const getProductsByCategory = async (category) => {
@@ -24,10 +29,12 @@ const getProductsByCategory = async (category) => {
     const products = await connectionDbb.getProductsByCategory(category);
     return products.map((product) => productDTO(product));
   } catch (error) {
-    logger.warn("error in get product by category method getProductsByCategory");
+    logger.warn(
+      "error in get product by category method getProductsByCategory"
+    );
     return { error: "error in get products" };
-  } 
-}
+  }
+};
 
 const addProduct = async (product) => {
   if (
@@ -65,5 +72,5 @@ module.exports = {
   getProductById,
   deleteProductById,
   updateProductById,
-  getProductsByCategory
+  getProductsByCategory,
 };

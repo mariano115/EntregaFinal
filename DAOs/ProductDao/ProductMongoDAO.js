@@ -13,8 +13,8 @@ module.exports = class ProductMongoDb {
     try {
       return await productModel.findById(id);
     } catch (error) {
-      logger.warn("error in get product method getProductById");
-      return { error: "error in get product" };
+      logger.warn("error in get product method getProductById", error);
+      throw new Error('error in get product');
     }
   }
 
@@ -23,7 +23,7 @@ module.exports = class ProductMongoDb {
       return await productModel.find({ category: category });
     } catch (error) {
       logger.warn("error in get product by category method getProductsByCategory");
-      return { error: "error in get product" };
+      throw new Error('error in get product');
     }
   }
 
@@ -32,7 +32,7 @@ module.exports = class ProductMongoDb {
       return await productModel.create(product);
     } catch (error) {
       logger.warn("error in creating product method addProduct");
-      return { error: "error in creating product" };
+      throw new Error('error in creating product');
     }
   }
 
@@ -41,7 +41,7 @@ module.exports = class ProductMongoDb {
       return await productModel.deleteOne({ _id: id });
     } catch (error) {
       logger.warn("error in deleting product method deleteProductById");
-      return { error: "error in deleting product" };
+      throw new Error("error in deleting product");
     }
   }
 
@@ -54,7 +54,7 @@ module.exports = class ProductMongoDb {
       );
     } catch (error) {
       logger.warn("error in modify product method updateProductById");
-      return { error: "error in modify product" };
+      throw new Error("error in modify product");
     }
   }
 

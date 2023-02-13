@@ -9,9 +9,9 @@ const getCartById = async (req, res) => {
   res.send(await cartService.getCartById(req.params.id));
 };
 
-const generatePurchaseSummary = async (cart) => {
+/* const generatePurchaseSummary = async (cart) => {
   return await cartService.generatePurchaseSummary(cart);
-};
+}; */
 
 const addProductToCart = async (req, res) => {
   res.send(await cartService.addProductToCart(
@@ -43,7 +43,7 @@ module.exports = {
   getCartById,
   addProductToCart,
   createEmptyCart,
-  generatePurchaseSummary,
+  /* generatePurchaseSummary ,*/
   getCarts,
   editCartById
 };
