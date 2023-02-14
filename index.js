@@ -139,6 +139,13 @@ app.get(
   }
 );
 
+app.get(
+  "/login-error",
+  (req, res) => {
+    res.send("Error de Login, volver a intentarlo");
+  }
+);
+
 app.get("/home", auth, async (req, res) => {
   logger.info("Peticion GET a ruta '/home'");
   const logedUser = await getDataUser(req.session.email);

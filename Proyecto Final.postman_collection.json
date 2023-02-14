@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"naomi30@ethereal.email\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -96,7 +96,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCarrito\": \"63b6f0d1508368e8dfd62860\"\r\n}",
+							"raw": "{\r\n    \"idCarrito\": \"63ebc6102bb6330f20dc215c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -152,26 +152,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Auth Status",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9090/auth/status",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9090",
-							"path": [
-								"auth",
-								"status"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -185,7 +165,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idProducto\": \"63e665074f8424c24a2cd7cf\",\r\n    \"idCarrito\": \"63ea56427d1d120ece4f805d\",\r\n    \"cantidad\": 5\r\n}",
+							"raw": "{\r\n    \"idProducto\": \"63ceb602690d04c98d7a1f1b\",\r\n    \"idCarrito\": \"63ebc6102bb6330f20dc215c\",\r\n    \"cantidad\": 5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -221,7 +201,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/carrito/63b83e4536b13789382069ee?admin=true",
+							"raw": "http://localhost:9090/carrito/63b71e91cb25e5819c00e2e0?admin=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -229,7 +209,7 @@
 							"port": "9090",
 							"path": [
 								"carrito",
-								"63b83e4536b13789382069ee"
+								"63b71e91cb25e5819c00e2e0"
 							],
 							"query": [
 								{
@@ -248,7 +228,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"address\": \"address modified\"\r\n}",
+							"raw": "{\r\n    \"address\": \"address modified video\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -256,7 +236,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/carrito/63b6f0d1508368e8dfd62860?admin=true",
+							"raw": "http://localhost:9090/carrito/63ebc6102bb6330f20dc215c?admin=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -264,7 +244,7 @@
 							"port": "9090",
 							"path": [
 								"carrito",
-								"63b6f0d1508368e8dfd62860"
+								"63ebc6102bb6330f20dc215c"
 							],
 							"query": [
 								{
@@ -282,7 +262,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/carrito/63b6f0d1508368e8dfd62860",
+							"raw": "http://localhost:9090/carrito/63ebc6102bb6330f20dc215c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -290,7 +270,7 @@
 							"port": "9090",
 							"path": [
 								"carrito",
-								"63b6f0d1508368e8dfd62860"
+								"63ebc6102bb6330f20dc215c"
 							]
 						}
 					},
@@ -333,7 +313,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"remera\",\r\n    \"price\": 90,\r\n    \"category\": \"indumentaria\",\r\n    \"photo\": \"foto remera\"\r\n}",
+							"raw": "{\r\n    \"description\": \"remeravideo2\",\r\n    \"price\": 90,\r\n    \"category\": \"indumentaria\",\r\n    \"photo\": \"foto remera\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -385,7 +365,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/productos/63ceb602690d04c98d7a1f1b",
+							"raw": "http://localhost:9090/productos/63ebc66b2bb6330f20dc216c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -393,7 +373,7 @@
 							"port": "9090",
 							"path": [
 								"productos",
-								"63ceb602690d04c98d7a1f1b"
+								"63ebc66b2bb6330f20dc216c"
 							]
 						}
 					},
@@ -446,7 +426,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/productos/63d3f8337dad90c19b3e77f4?admin=true",
+							"raw": "http://localhost:9090/productos/63ebc66b2bb6330f20dc216c?admin=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -454,7 +434,7 @@
 							"port": "9090",
 							"path": [
 								"productos",
-								"63d3f8337dad90c19b3e77f4"
+								"63ebc66b2bb6330f20dc216c"
 							],
 							"query": [
 								{
@@ -473,7 +453,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"category\": \"category modificacion2\"\r\n}",
+							"raw": "{\r\n    \"category\": \"category video\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -481,7 +461,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/productos/63e114e9d2c5bdc121894ee2?admin=true",
+							"raw": "http://localhost:9090/productos/63e66544f737b09760a29c9a?admin=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -489,7 +469,7 @@
 							"port": "9090",
 							"path": [
 								"productos",
-								"63e114e9d2c5bdc121894ee2"
+								"63e66544f737b09760a29c9a"
 							],
 							"query": [
 								{
@@ -513,7 +493,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"pruebaemail@email.com\",\r\n    \"type\": \"usuario2\",\r\n    \"text\": \"Hola! como estas?\"\r\n}",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"type\": \"usuario2\",\r\n    \"text\": \"Hola! como estas?2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -559,7 +539,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/chat/id/63c826be511c6b184224c1b3",
+							"raw": "http://localhost:9090/chat/id/63ebc6c32bb6330f20dc2178",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -568,7 +548,7 @@
 							"path": [
 								"chat",
 								"id",
-								"63c826be511c6b184224c1b3"
+								"63ebc6c32bb6330f20dc2178"
 							]
 						}
 					},
@@ -580,7 +560,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/chat/pruebaemail@email.com",
+							"raw": "http://localhost:9090/chat/iva.ziemann23@ethereal.email",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -588,7 +568,7 @@
 							"port": "9090",
 							"path": [
 								"chat",
-								"pruebaemail@email.com"
+								"iva.ziemann23@ethereal.email"
 							]
 						}
 					},
