@@ -1,10 +1,14 @@
-const { Schema, model } = require("mongoose");
+const mongoose= require("mongoose");
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
-const OrderSchema = new Schema({
+
+const OrderSchema = new mongoose.Schema({
 	items: { type: Array, required: true },
-	numberOrder: { type: Number, required: true},
+	numberOrder: { type: Number },
 	date: { type: Date, required: true },
 	state: { type: String, required: true },
 	email: { type: String, required: true }
 });
-module.exports = model("ordenes", OrderSchema)
+
+OrderSchema.plugin(AutoIncrement, {id:'order_seq',inc_field: 'numberOrder'});
+module.exports = mongoose.model("ordenes", OrderSchema)

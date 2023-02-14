@@ -1,19 +1,20 @@
-const ProductService = require("./ProductsService");
 const { loggerDeclaration } = require("../tools/utils");
-const MyConnectionFactory = require("../DAOs/CartDao/CartFactoryDAO");
-const cartDTO = require("../DTOs/CartDTO");
+const MyConnectionFactory = require("../DAOs/OrderDao/OrderFactoryDAO");
 const connectionDbb = new MyConnectionFactory().returnDbConnection();
 const logger = loggerDeclaration();
-
-const getCarts = async () => {
-  return await connectionDbb.getCarts();
+ 
+const generateOrder = async (cart) => {
+  try{
+    return await connectionDbb.createOrder(cart.items, cart.email);
+  } catch (error) {
+    logger.warn("No se pudo crear el resumen de productos");
+    return error;
+  }
 };
 
-const generateOrder = async (cart, user) => {
-  console.log('cart',cart)
-  console.log('user',user)
+const generatePurchaseSummary = async (items) => {
   try {
-    const itemsList = cart.items
+    const itemsTextList = items
       .map((item) => {
         return `Producto: ${item.product.description} Cantidad ${
           item.quantity
@@ -23,7 +24,7 @@ const generateOrder = async (cart, user) => {
         } <br> `;
       })
       .join("");
-    //return await connectionDbb.addProduct(product);
+    return itemsTextList;
   } catch (error) {
     logger.warn("No se pudo crear el resumen de productos");
     return error;
@@ -31,5 +32,6 @@ const generateOrder = async (cart, user) => {
 };
 
 module.exports = {
-  generateOrder
+  generateOrder,
+  generatePurchaseSummary
 };

@@ -13,25 +13,6 @@ const getCartById = async (id) => {
   return cartDTO(await connectionDbb.getCartById(id));
 };
 
-/* const generatePurchaseSummary = async (cart) => {
-  try {
-    const itemsList = cart.items
-      .map((item) => {
-        return `Producto: ${item.product.description} Cantidad ${
-          item.quantity
-        } Categoria ${item.product.category} Precio C/U ${item.product.price}
-        Photo ${item.product.photo} Total: ${
-          item.product.price * item.quantity
-        } <br> `;
-      })
-      .join("");
-    return itemsList;
-  } catch (error) {
-    logger.warn("No se pudo crear el resumen de productos");
-    return error;
-  }
-}; */
-
 const addProductToCart = async (idProduct, idCart, cantidad) => {
   try {
     const productToAdd = await ProductService.getProductById(idProduct);
@@ -58,7 +39,6 @@ module.exports = {
   getCartById,
   addProductToCart,
   createEmptyCart,
-  /* generatePurchaseSummary, */
   getCarts,
   deleteCartById,
   editCartById
