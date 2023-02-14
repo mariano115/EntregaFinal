@@ -19,6 +19,16 @@ const getMessagesById = async (id) => {
   }
 };
 
+
+const getMessagesByEmail = async (email) => {
+  try {
+    return await connectionDbb.getMessagesByEmail(email);
+  } catch (error) {
+    logger.warn("error in get messages method getMessagesByEmail");
+    return { error: "error in get messages" };
+  }
+};
+
 const addMessage = (message) => {
   if (
     message.email !== undefined &&
@@ -40,4 +50,4 @@ const addMessage = (message) => {
   }
 };
 
-module.exports = { getMessages, getMessagesById, addMessage };
+module.exports = { getMessages, getMessagesById, getMessagesByEmail, addMessage };

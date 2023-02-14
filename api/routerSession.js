@@ -5,6 +5,6 @@ const SessionController = require("../controllers/SessionController");
 
 router.post("/register", SessionController.register)
 router.get("/logout", SessionController.logout)
-router.post("/finishbuy",/*  auth, */ SessionController.finishBuy)
+router.post("/finishbuy", auth, SessionController.finishBuy)
 
 module.exports = router;

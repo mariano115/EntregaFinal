@@ -8,7 +8,6 @@ module.exports = class UsersMongoDb {
   }
 
   async registerUser(userToCreate) {
-    console.log("registerUser");
     const newUser = new userModel(userToCreate);
     newUser.save();
     return newUser;

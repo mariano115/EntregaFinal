@@ -1,3 +1,2 @@
-TAREA
--Crear testing
--Resolver temas de el anterior ejercicio
+-Instalar todas las dependencias del proyecto con npm install
+-Ejecutar nodemon run start

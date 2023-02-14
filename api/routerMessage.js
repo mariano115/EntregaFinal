@@ -4,7 +4,8 @@ const { auth, validateAdmin } = require("../middlewares/middlewares");
 const MessageController = require("../controllers/MessageController")
 
 router.get("/", auth, MessageController.getMessages)
-router.get("/:id", auth, MessageController.getMessagesById)
+router.get("/:email", auth, MessageController.getMessagesByEmail)
+router.get("/id/:id", auth, MessageController.getMessagesById)
 router.post("/", auth, MessageController.addMessage)
 
 module.exports = router;

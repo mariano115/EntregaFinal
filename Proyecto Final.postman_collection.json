@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"prueba@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"email\": \"naomi30@ethereal.email\",\r\n    \"password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"prueba5@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"name\": \"nombreTest2\",\r\n    \"address\": \"Calle falsa 123\",\r\n    \"age\": 22,\r\n    \"phone\": \"+54 1167876544\",\r\n    \"photo\": \"https://assets.puzzlefactory.pl/puzzle/353/899/original.jpg\"\r\n}",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"password\": \"123456\",\r\n    \"name\": \"nombreTest2\",\r\n    \"address\": \"Calle falsa 123\",\r\n    \"age\": 22,\r\n    \"phone\": \"+54 1167876544\",\r\n    \"photo\": \"https://assets.puzzlefactory.pl/puzzle/353/899/original.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -96,7 +96,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCarrito\": \"63beccad2b3dfda9d2c234af\"\r\n}",
+							"raw": "{\r\n    \"idCarrito\": \"63b6f0d1508368e8dfd62860\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -185,7 +185,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idProducto\": \"63ceb602690d04c98d7a1f1b\",\r\n    \"idCarrito\": \"63b8426e7e8cf968fe3ec53a\",\r\n    \"cantidad\": 5\r\n}",
+							"raw": "{\r\n    \"idProducto\": \"63e665074f8424c24a2cd7cf\",\r\n    \"idCarrito\": \"63ea56427d1d120ece4f805d\",\r\n    \"cantidad\": 5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -230,6 +230,41 @@
 							"path": [
 								"carrito",
 								"63b83e4536b13789382069ee"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Cart By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"address modified\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/carrito/63b6f0d1508368e8dfd62860?admin=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"carrito",
+								"63b6f0d1508368e8dfd62860"
 							],
 							"query": [
 								{
@@ -365,6 +400,47 @@
 					"response": []
 				},
 				{
+					"name": "Get Producto por id Inexistente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/productos/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"productos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Productos por categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/productos/categoria/indumentaria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"productos",
+								"categoria",
+								"indumentaria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete Product",
 					"request": {
 						"method": "DELETE",
@@ -445,14 +521,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/mensajes",
+							"raw": "http://localhost:9090/chat",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9090",
 							"path": [
-								"mensajes"
+								"chat"
 							]
 						}
 					},
@@ -464,14 +540,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/mensajes",
+							"raw": "http://localhost:9090/chat",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9090",
 							"path": [
-								"mensajes"
+								"chat"
 							]
 						}
 					},
@@ -483,15 +559,36 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/mensajes/63c826be511c6b184224c1b3",
+							"raw": "http://localhost:9090/chat/id/63c826be511c6b184224c1b3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9090",
 							"path": [
-								"mensajes",
+								"chat",
+								"id",
 								"63c826be511c6b184224c1b3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mensajes por Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/chat/pruebaemail@email.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"chat",
+								"pruebaemail@email.com"
 							]
 						}
 					},

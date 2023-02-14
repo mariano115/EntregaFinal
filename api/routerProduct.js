@@ -4,7 +4,7 @@ const { auth, validateAdmin } = require("../middlewares/middlewares");
 const productsController = require("../controllers/ProductController")
 
 router.get("/", auth, productsController.getProducts)
-router.get("/:id",/*  auth, */ productsController.getProductById)
+router.get("/:id", auth, productsController.getProductById)
 router.get("/categoria/:id", auth, productsController.getProductsByCategory)
 router.post("/", auth, validateAdmin, productsController.addProduct)
 router.delete("/:id", auth, validateAdmin, productsController.deleteProductById)
