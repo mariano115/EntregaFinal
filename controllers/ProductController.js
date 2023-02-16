@@ -9,8 +9,8 @@ const getProductById = async (req, res) => {
 };
 
 const getProductsByCategory = async (req, res) => {
-  res.send(await ProductService.getProductsByCategory(req.params.id))
-}
+  res.send(await ProductService.getProductsByCategory(req.params.id));
+};
 
 const addProduct = async (req, res) => {
   res.send(await ProductService.addProduct(req.body));

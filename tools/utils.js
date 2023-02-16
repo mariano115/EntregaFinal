@@ -37,9 +37,7 @@ const downloadPicAndSaveInAvatars = (url, image_path) => {
       (response) =>
         new Promise((resolve, reject) => {
           response.data
-            .pipe(
-              fs.createWriteStream(Config.publicAvatarsUrl + image_path)
-            )
+            .pipe(fs.createWriteStream(Config.publicAvatarsUrl + image_path))
             .on("finish", () => resolve())
             .on("error", (e) => reject(e));
         })
@@ -54,5 +52,5 @@ module.exports = {
   createHash,
   loggerDeclaration,
   getDataUser,
-  downloadPicAndSaveInAvatars
+  downloadPicAndSaveInAvatars,
 };

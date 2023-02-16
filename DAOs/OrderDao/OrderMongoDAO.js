@@ -4,7 +4,7 @@ const logger = loggerDeclaration();
 
 module.exports = class OrderMongoDb {
   constructor() {}
-  
+
   async createOrder(items, email) {
     try {
       return await OrderModel.create({

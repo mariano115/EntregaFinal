@@ -12,7 +12,7 @@ module.exports = class MessageMongoDAO {
   }
 
   async getMessagesByEmail(email) {
-    return await messagesModel.find({email});
+    return await messagesModel.find({ email });
   }
 
   async addMessage(message) {

@@ -1,7 +1,7 @@
-const UserMongo = require('./UserMongoDAO')
+const UserMongo = require("./UserMongoDAO");
 
 module.exports = class MyConnectionFactory {
-    returnDbConnection(){
-        if(process.env.STORE == 'MONGO') return UserMongo.returnSingleton()
-    }
-}
+  returnDbConnection() {
+    if (process.env.STORE == "MONGO") return UserMongo.returnSingleton();
+  }
+};

@@ -6,8 +6,8 @@ const logger = loggerDeclaration();
 
 const getMessages = async () => {
   const messages = await connectionDbb.getMessages();
-  const messagesDTO = messages.map(message => messageDTO(message));
-  return messagesDTO
+  const messagesDTO = messages.map((message) => messageDTO(message));
+  return messagesDTO;
 };
 
 const getMessagesById = async (id) => {
@@ -18,7 +18,6 @@ const getMessagesById = async (id) => {
     return { error: "error in get message" };
   }
 };
-
 
 const getMessagesByEmail = async (email) => {
   try {
@@ -43,11 +42,16 @@ const addMessage = (message) => {
   ) {
     message.date = new Date().toISOString();
     connectionDbb.addMessage(message);
-    return "Mensaje añadido"
+    return "Mensaje añadido";
   } else {
     logger.warn("error in creating message method addMessage");
     return { error: "error in creating message" };
   }
 };
 
-module.exports = { getMessages, getMessagesById, getMessagesByEmail, addMessage };
+module.exports = {
+  getMessages,
+  getMessagesById,
+  getMessagesByEmail,
+  addMessage,
+};

@@ -23,7 +23,7 @@ const finishBuy = async (carrito) => {
     const cart = await getCartById(carrito.idCarrito);
     const user = await getDataUser(cart.email);
     const order = await generateOrder(cart, user);
-    const itemsTextList = await generatePurchaseSummary(order.items)
+    const itemsTextList = await generatePurchaseSummary(order.items);
     enviarMail(
       cart.email,
       "nuevo pedido de " + user.name + " " + user.email,

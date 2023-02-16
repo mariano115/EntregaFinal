@@ -5,14 +5,14 @@ const {
 } = require("../tools/utils");
 const logger = loggerDeclaration();
 const Config = require("../config");
-const MyConnectionFactory = require("../DAOs/UserDao/UserFactoryDAO")
-const connectionDbb = (new MyConnectionFactory).returnDbConnection()
+const MyConnectionFactory = require("../DAOs/UserDao/UserFactoryDAO");
+const connectionDbb = new MyConnectionFactory().returnDbConnection();
 
 const createUser = async (userToCreate) => {
   try {
     if ((await connectionDbb.findUserByEmail(userToCreate.email)) == null) {
       const newPhotoPath = `${Config.publicAvatarsUrl}${userToCreate.email}.jpg`;
-      const newUser = await connectionDbb.registerUser(userToCreate)
+      const newUser = await connectionDbb.registerUser(userToCreate);
       const text =
         "Nuevo usuario creado: nombre: " +
         newUser.name +

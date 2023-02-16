@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const path = require('path');
+const path = require("path");
 const { Server: HttpServer } = require("http");
 const app = express();
 const httpServer = new HttpServer(app);
@@ -10,16 +10,20 @@ const Config = require("./config");
 const cookieParser = require("cookie-parser");
 const userModel = require("./models/User.model");
 const MongoStore = require("connect-mongo");
-const { isValidPassword, loggerDeclaration, getDataUser } = require("./tools/utils");
+const {
+  isValidPassword,
+  loggerDeclaration,
+  getDataUser,
+} = require("./tools/utils");
 const { auth } = require("./middlewares/middlewares");
 const parseArgs = require("minimist");
-const routerSession = require("./api/routerSession")
-const routerProduct = require("./api/routerProduct")
-const routerCart = require("./api/routerCart")
-const routerMessage = require("./api/routerMessage")
+const routerSession = require("./api/routerSession");
+const routerProduct = require("./api/routerProduct");
+const routerCart = require("./api/routerCart");
+const routerMessage = require("./api/routerMessage");
 
 //loggers
-const logger = loggerDeclaration()
+const logger = loggerDeclaration();
 
 //passport imports
 const passport = require("passport");
@@ -30,7 +34,7 @@ const LocalStrategy = Strategy;
 
 //servidor
 app.use(express.urlencoded({ extended: true }));
-app.use("/public", express.static(path.join(__dirname, 'public')));
+app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(cors());
 
@@ -50,14 +54,15 @@ app.use(
 );
 
 /*------------Routers-----------*/
-app.use("/session", routerSession)
-app.use("/productos", routerProduct)
-app.use("/carrito", routerCart)
-app.use("/chat", routerMessage)
-
+app.use("/session", routerSession);
+app.use("/productos", routerProduct);
+app.use("/carrito", routerCart);
+app.use("/chat", routerMessage);
 
 //Puerto enviado por ARGS
-const args = parseArgs(process.argv.slice(2), {default: {PORT: Config.port}})
+const args = parseArgs(process.argv.slice(2), {
+  default: { PORT: Config.port },
+});
 const PORT = Config.port || args.PORT;
 
 mongoose.connect(
@@ -123,7 +128,7 @@ passport.deserializeUser((id, done) => {
 });
 
 app.get("/", auth, (req, res) => {
-  logger.info("Redireccion a ruta '/home' autenticacion Completada")
+  logger.info("Redireccion a ruta '/home' autenticacion Completada");
   res.redirect("/home");
 });
 
@@ -133,18 +138,15 @@ app.get(
     failureRedirect: "/login-error",
   }),
   (req, res) => {
-    logger.info("Peticion GET a ruta '/login'")
+    logger.info("Peticion GET a ruta '/login'");
     req.session.email = req.body.email;
     res.redirect("/productos");
   }
 );
 
-app.get(
-  "/login-error",
-  (req, res) => {
-    res.send("Error de Login, volver a intentarlo");
-  }
-);
+app.get("/login-error", (req, res) => {
+  res.send("Error de Login, volver a intentarlo");
+});
 
 app.get("/home", auth, async (req, res) => {
   logger.info("Peticion GET a ruta '/home'");
@@ -157,10 +159,10 @@ app.get("/home", auth, async (req, res) => {
   res.send(response);
 });
 
-app.use('*',(req, res) => {
-  logger.warn(`Ruta Incorrecta ${req.originalUrl}`)
-  res.send(`Ruta Incorrecta ${req.originalUrl}`)
-})
+app.use("*", (req, res) => {
+  logger.warn(`Ruta Incorrecta ${req.originalUrl}`);
+  res.send(`Ruta Incorrecta ${req.originalUrl}`);
+});
 
 httpServer.listen(PORT, () =>
   logger.info("servidor Levantado en el puerto " + PORT)

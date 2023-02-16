@@ -2,9 +2,9 @@ const { loggerDeclaration } = require("../tools/utils");
 const MyConnectionFactory = require("../DAOs/OrderDao/OrderFactoryDAO");
 const connectionDbb = new MyConnectionFactory().returnDbConnection();
 const logger = loggerDeclaration();
- 
+
 const generateOrder = async (cart) => {
-  try{
+  try {
     return await connectionDbb.createOrder(cart.items, cart.email);
   } catch (error) {
     logger.warn("No se pudo crear el resumen de productos");
@@ -33,5 +33,5 @@ const generatePurchaseSummary = async (items) => {
 
 module.exports = {
   generateOrder,
-  generatePurchaseSummary
+  generatePurchaseSummary,
 };

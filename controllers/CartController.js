@@ -10,16 +10,18 @@ const getCartById = async (req, res) => {
 };
 
 const addProductToCart = async (req, res) => {
-  res.send(await cartService.addProductToCart(
-    req.body.idProducto,
-    req.body.idCarrito,
-    req.body.cantidad
-  ))
+  res.send(
+    await cartService.addProductToCart(
+      req.body.idProducto,
+      req.body.idCarrito,
+      req.body.cantidad
+    )
+  );
 };
 
 const deleteCartById = async (req, res) => {
-  res.send(await cartService.deleteCartById(req.params.id))
-}
+  res.send(await cartService.deleteCartById(req.params.id));
+};
 
 const createEmptyCart = async (email, address) => {
   return await cartModel.create({
@@ -40,5 +42,5 @@ module.exports = {
   addProductToCart,
   createEmptyCart,
   getCarts,
-  editCartById
+  editCartById,
 };

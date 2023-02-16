@@ -20,5 +20,5 @@ module.exports = {
   getMessages,
   addMessage,
   getMessagesById,
-  getMessagesByEmail
+  getMessagesByEmail,
 };
