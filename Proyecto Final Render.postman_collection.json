@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "b2f2381a-8130-42c1-8fc4-c3439f891d7f",
+		"name": "Proyecto Final Render",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6391686"
+	},
+	"item": [
+		{
+			"name": "Sessions",
+			"item": [
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/login",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"password\": \"123456\",\r\n    \"name\": \"nombreTest2\",\r\n    \"address\": \"Calle falsa 123\",\r\n    \"age\": 22,\r\n    \"phone\": \"+54 1167876544\",\r\n    \"photo\": \"https://assets.puzzlefactory.pl/puzzle/353/899/original.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/session/register",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"session",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/session/logout",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"session",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finalizar Compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCarrito\": \"63ebc6102bb6330f20dc215c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/session/finishbuy",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"session",
+								"finishbuy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/home",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ruta Base",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrito",
+			"item": [
+				{
+					"name": "Agregar producto a Carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProducto\": \"63ceb602690d04c98d7a1f1b\",\r\n    \"idCarrito\": \"63ebc6102bb6330f20dc215c\",\r\n    \"cantidad\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/carrito",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"carrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart por Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProducto\": \"63ceb602690d04c98d7a1f1b\",\r\n    \"idCarrito\": \"63b8426e7e8cf968fe3ec53a\",\r\n    \"cantidad\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/carrito/63b71e91cb25e5819c00e2e0?admin=true",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"carrito",
+								"63b71e91cb25e5819c00e2e0"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Cart By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"address modified video\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/carrito/63ebc6102bb6330f20dc215c?admin=true",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"carrito",
+								"63ebc6102bb6330f20dc215c"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Carrito por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/carrito/63ebc6102bb6330f20dc215c",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"carrito",
+								"63ebc6102bb6330f20dc215c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Carritos (ADMIN)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/carrito?admin=true",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"carrito"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Crear producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"remeravideo2\",\r\n    \"price\": 90,\r\n    \"category\": \"indumentaria\",\r\n    \"photo\": \"foto remera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/productos?admin=true",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"productos"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/productos",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Producto por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/productos/63ebc66b2bb6330f20dc216c",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"productos",
+								"63ebc66b2bb6330f20dc216c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Producto por id Inexistente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/productos/123",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"productos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Productos por categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/productos/categoria/indumentaria",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"productos",
+								"categoria",
+								"indumentaria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/productos/63ebc66b2bb6330f20dc216c?admin=true",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"productos",
+								"63ebc66b2bb6330f20dc216c"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"category video\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/productos/63e66544f737b09760a29c9a?admin=true",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"productos",
+								"63e66544f737b09760a29c9a"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mensajes",
+			"item": [
+				{
+					"name": "Crear Mensaje",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"type\": \"usuario2\",\r\n    \"text\": \"Hola! como estas?2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://final-node.onrender.com/chat",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mensajes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/chat",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mensajes por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/chat/id/63ebc6c32bb6330f20dc2178",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"chat",
+								"id",
+								"63ebc6c32bb6330f20dc2178"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mensajes por Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/chat/iva.ziemann23@ethereal.email",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"chat",
+								"iva.ziemann23@ethereal.email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
