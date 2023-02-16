@@ -152,6 +152,44 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Environment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/environment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"environment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/configuration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"configuration"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -493,7 +531,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"type\": \"usuario2\",\r\n    \"text\": \"Hola! como estas?2\"\r\n}",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"type\": \"usuario\",\r\n    \"text\": \"Hola! como estas?2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

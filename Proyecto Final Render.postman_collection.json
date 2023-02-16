@@ -158,6 +158,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Environment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/environment",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"environment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://final-node.onrender.com/configuration",
+							"protocol": "https",
+							"host": [
+								"final-node",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"configuration"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -511,7 +551,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"type\": \"usuario2\",\r\n    \"text\": \"Hola! como estas?2\"\r\n}",
+							"raw": "{\r\n    \"email\": \"iva.ziemann23@ethereal.email\",\r\n    \"type\": \"usuario\",\r\n    \"text\": \"Hola! como estas?2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
