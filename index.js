@@ -127,6 +127,23 @@ passport.deserializeUser((id, done) => {
   });
 });
 
+app.get("/environment", auth, (req, res) => {
+  res.send(Config);
+});
+
+app.get("/configuration", auth, (req, res) => {
+  const infoData = {
+    arguments: parseArgs(process.argv.slice(2)),
+    plataform: process.platform,
+    nodeVersion: process.version,
+    rss: process.memoryUsage().rss,
+    execPath: process.execPath,
+    IdProcess: process.pid,
+    proyectFolder: process.cwd(),
+  };
+  res.send( infoData );
+})
+
 app.get("/", auth, (req, res) => {
   logger.info("Redireccion a ruta '/home' autenticacion Completada");
   res.redirect("/home");
