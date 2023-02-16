@@ -63,7 +63,7 @@ app.use("/chat", routerMessage);
 const args = parseArgs(process.argv.slice(2), {
   default: { PORT: Config.port },
 });
-const PORT = args.PORT || Config.port;
+const PORT = process.env.PORT || args.PORT || 9090;
 
 mongoose.connect(
   Config.urlMongo,
